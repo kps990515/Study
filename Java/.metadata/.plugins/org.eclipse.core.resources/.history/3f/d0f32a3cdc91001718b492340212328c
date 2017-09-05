@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class calculator {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("지불금액을 입력하세요");
+		int pay = sc.nextInt();
+		System.out.println("구입금액을 입력하세요");
+		int buy = sc.nextInt();
+		calc(pay, buy);
+	}
+	public static void calc(int pay, int buy)
+	{
+		int a = (pay-buy)/5000;
+		int b = (pay-(buy+5000*a))/1000;
+		int c = (pay-(buy+5000*a+1000*b))/500;
+		int d = (pay-(buy+5000*a+1000*b+500*c))/100;
+		int e = (pay-(buy+5000*a+1000*b+500*c+100*d))/50;
+		int f = (pay-(buy+5000*a+1000*b+500*c+100*d+50*e))/10;
+		System.out.println("5000원 : "+a+"\n1000원 : "+b+"\n500원 : "+c+"\n100원 : "+d+"\n50원 : "+e+"\n10원 : "+f);
+	}
+}
